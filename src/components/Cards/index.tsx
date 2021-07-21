@@ -1,7 +1,12 @@
-const Card = () => (
-  <main>
-    <h1>Alurakut</h1>
-  </main>
-);
+import * as S from './styles';
 
-export default Card;
+const Main = ({
+  title = 'Alurakut',
+  description = 'TypeScript, ReactJS, NextJS e Styled Components'
+}) => (
+  <S.Wrapper>
+    <S.Title>{title}</S.Title>
+    <S.Description>{description}</S.Description>
+  </S.Wrapper>
+);
+export default Main;
