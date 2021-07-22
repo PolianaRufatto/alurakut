@@ -1,12 +1,11 @@
+import { ReactNode } from 'react';
+
 import * as S from './styles';
 
-const Main = ({
-  title = 'Alurakut',
-  description = 'TypeScript, ReactJS, NextJS e Styled Components'
-}) => (
-  <S.Wrapper>
-    <S.Title>{title}</S.Title>
-    <S.Description>{description}</S.Description>
-  </S.Wrapper>
-);
-export default Main;
+interface CardProps {
+  children: ReactNode;
+}
+
+export default function Card({ children }: CardProps) {
+  return <S.Container>{children}</S.Container>;
+}

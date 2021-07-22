@@ -1,19 +1,15 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Card from '.';
 
 export default {
-  title: 'Card',
-  component: Card,
-  decorators: [withKnobs]
-} as Meta;
+  title: 'Components/Card',
+  component: Card
+} as ComponentMeta<typeof Card>;
 
-export const Basic: Story = () => (
-  <Card
-    title={text('Title', 'Alurakut')}
-    description={text(
-      'Description',
-      'TypeScript, ReactJS, NextJS e Styled Components'
-    )}
-  />
+const Template: ComponentStory<typeof Card> = () => (
+  <Card>
+    <h1>Conteúdo</h1>
+  </Card>
 );
+
+export const Default = Template.bind({});

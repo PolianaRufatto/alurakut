@@ -1,22 +1,16 @@
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 
 import GlobalStyles from 'styles/global';
+import { ThemeProvider } from 'styled-components';
+import theme from '../styles/theme';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Alurakut</title>
-        <link rel="shortcut icon" href="/img/Orkut-icon.png" />
-        <link rel="apple-touch-icon" href="/img/Orkut-icon.png" />
-        <meta
-          name="description"
-          content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
-        />
-      </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
